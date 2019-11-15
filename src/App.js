@@ -1,7 +1,8 @@
 import React from "react";
 import Die from "./components/Dice";
+
 import "./App.css";
-import { setState } from "expect/build/jestMatchersObject";
+import "./Dice.css";
 
 function randomInteger(low, high) {
   return Math.floor(Math.random() * high) + low + 1;
@@ -25,8 +26,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Die number={this.state.die1} />
-        <Die number={this.state.die2} />
+        <div className="Dice">
+          <Die number={this.state.die1} />
+          <Die number={this.state.die2} />
+        </div>
         <button onClick={this.rollDice}>Roll Dice</button>
       </div>
     );
