@@ -1,3 +1,9 @@
+## Description
+Simple react app integrating state management with the use of the AnimateCSS library.
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
