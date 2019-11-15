@@ -1,5 +1,5 @@
 ## Description
-Simple react app integrating state management with the use of the AnimateCSS library.
+Simple react app integrating state management with the use of the AnimateCSS and FontAwesome library.
 
 
 
