@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Die from "./components/Dice";
+import "./App.css";
+import { setState } from "expect/build/jestMatchersObject";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function randomInteger(low, high) {
+  return Math.floor(Math.random() * high) + low + 1;
+}
+
+class App extends React.Component {
+  state = {
+    die1: 1,
+    die2: 1
+  };
+
+  rollDice = () => {
+    const die1 = randomInteger(1, 6);
+    const die2 = randomInteger(1, 6);
+    this.setState({
+      die1,
+      die2
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Die number={this.state.die1} />
+        <Die number={this.state.die2} />
+        <button onClick={this.rollDice}>Roll Dice</button>
+      </div>
+    );
+  }
 }
 
 export default App;
